@@ -6,14 +6,14 @@ if (navToggle && navMenu) {
   navToggle.addEventListener('click', () => {
     const isOpen = navMenu.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', String(isOpen));
-    navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    navToggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
   });
 
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
       navMenu.classList.remove('open');
       navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.setAttribute('aria-label', 'Open menu');
+      navToggle.setAttribute('aria-label', 'Menü öffnen');
     });
   });
 
@@ -21,7 +21,7 @@ if (navToggle && navMenu) {
     if (!navMenu.contains(event.target) && !navToggle.contains(event.target)) {
       navMenu.classList.remove('open');
       navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.setAttribute('aria-label', 'Open menu');
+      navToggle.setAttribute('aria-label', 'Menü öffnen');
     }
   });
 }
